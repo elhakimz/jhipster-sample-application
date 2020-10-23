@@ -1,0 +1,55 @@
+{
+  "name": "CommEvent",
+  "fields": [
+    {
+      "fieldName": "eventId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "started",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "ended",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "note",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "partyRelationship",
+      "otherEntityRelationshipName": "commEvent",
+      "relationshipName": "contextOf",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "contactMechType",
+      "otherEntityRelationshipName": "commEvent",
+      "relationshipName": "occursVia",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "casus",
+      "otherEntityRelationshipName": "commEvent",
+      "relationshipName": "casus",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201023032035",
+  "entityTableName": "comm_event",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

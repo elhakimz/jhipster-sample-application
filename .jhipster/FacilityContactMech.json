@@ -1,0 +1,38 @@
+{
+  "name": "FacilityContactMech",
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "contactMech",
+      "otherEntityRelationshipName": "facilityContactMech",
+      "relationshipName": "contactMechanism",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "facility",
+      "otherEntityRelationshipName": "facilityContactMech",
+      "relationshipName": "facility",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "commEvent",
+      "otherEntityRelationshipName": "facilityContactMech",
+      "relationshipName": "communicationEvent",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201023033335",
+  "entityTableName": "facility_contact_mech",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

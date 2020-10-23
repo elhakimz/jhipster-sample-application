@@ -1,0 +1,41 @@
+{
+  "name": "Agreement",
+  "fields": [
+    {
+      "fieldName": "agreementNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "agreementDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "partyRelationship",
+      "otherEntityRelationshipName": "agreement",
+      "relationshipName": "partyRelationship",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201023031735",
+  "entityTableName": "agreement",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

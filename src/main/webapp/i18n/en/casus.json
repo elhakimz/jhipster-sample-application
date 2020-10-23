@@ -1,0 +1,25 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "casus": {
+      "home": {
+        "title": "Casuses",
+        "createLabel": "Create a new Casus",
+        "createOrEditLabel": "Create or edit a Casus",
+        "notFound": "No Casuses found"
+      },
+      "created": "A new Casus is created with identifier {{ param }}",
+      "updated": "A Casus is updated with identifier {{ param }}",
+      "deleted": "A Casus is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Casus {{ id }}?"
+      },
+      "detail": {
+        "title": "Casus"
+      },
+      "code": "Code",
+      "description": "Description",
+      "start": "Start",
+      "statusType": "Status Type"
+    }
+  }
+}

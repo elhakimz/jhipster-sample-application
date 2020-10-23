@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="workEffort">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.workEffort.detail.title">Work Effort</span> {{ workEffort.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.workEffort.code">Code</span></dt>
+                <dd>
+                    <span>{{ workEffort.code }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.workEffort.name">Name</span></dt>
+                <dd>
+                    <span>{{ workEffort.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.workEffort.description">Description</span></dt>
+                <dd>
+                    <span>{{ workEffort.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.workEffort.scheduledStart">Scheduled Start</span></dt>
+                <dd>
+                    <span>{{ workEffort.scheduledStart }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.workEffort.scheduledCompletion">Scheduled Completion</span></dt>
+                <dd>
+                    <span>{{ workEffort.scheduledCompletion }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.workEffort.totalMoneyAllowed">Total Money Allowed</span></dt>
+                <dd>
+                    <span>{{ workEffort.totalMoneyAllowed }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.workEffort.totalHoursAllowed">Total Hours Allowed</span></dt>
+                <dd>
+                    <span>{{ workEffort.totalHoursAllowed }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.workEffort.estimatedHours">Estimated Hours</span></dt>
+                <dd>
+                    <span>{{ workEffort.estimatedHours }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.workEffort.workEffortType">Work Effort Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhipsterSampleApplicationApp.WorkEffortType.' + workEffort.workEffortType }}">{{ workEffort.workEffortType }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/work-effort', workEffort.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "IdentificationType": {
+      "null": "",
+      "KTP": "KTP",
+      "PASSPORT": "PASSPORT",
+      "NPWP": "NPWP",
+      "BPJS": "BPJS"
+    }
+  }
+}

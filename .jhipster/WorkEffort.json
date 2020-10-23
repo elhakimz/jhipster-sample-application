@@ -1,0 +1,54 @@
+{
+  "name": "WorkEffort",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "scheduledStart",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "scheduledCompletion",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "totalMoneyAllowed",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "totalHoursAllowed",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "estimatedHours",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "workEffortType",
+      "fieldType": "WorkEffortType",
+      "fieldValues": "PROGRAM,PHASE,PROJECT,TASK,ACTIVITY"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20201023033735",
+  "entityTableName": "work_effort",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

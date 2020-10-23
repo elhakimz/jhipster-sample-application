@@ -1,0 +1,66 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-party-identification-heading" jhiTranslate="jhipsterSampleApplicationApp.partyIdentification.home.createOrEditLabel">Create or edit a Party Identification</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.partyIdentification.identificationType" for="field_identificationType">Identification Type</label>
+                    <select class="form-control" name="identificationType" formControlName="identificationType" id="field_identificationType">
+                        <option value="KTP">{{ 'jhipsterSampleApplicationApp.IdentificationType.KTP' | translate }}</option>
+                        <option value="PASSPORT">{{ 'jhipsterSampleApplicationApp.IdentificationType.PASSPORT' | translate }}</option>
+                        <option value="NPWP">{{ 'jhipsterSampleApplicationApp.IdentificationType.NPWP' | translate }}</option>
+                        <option value="BPJS">{{ 'jhipsterSampleApplicationApp.IdentificationType.BPJS' | translate }}</option>
+                    </select>
+                    <div *ngIf="editForm.get('identificationType')!.invalid && (editForm.get('identificationType')!.dirty || editForm.get('identificationType')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('identificationType')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.partyIdentification.identNo" for="field_identNo">Ident No</label>
+                    <input type="text" class="form-control" name="identNo" id="field_identNo"
+                           formControlName="identNo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.partyIdentification.validDate" for="field_validDate">Valid Date</label>
+                    <div class="input-group">
+                        <input id="field_validDate" type="text" class="form-control" name="validDate" ngbDatepicker #validDateDp="ngbDatepicker" formControlName="validDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="validDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.partyIdentification.party" for="field_party">Party</label>
+                    <select class="form-control" id="field_party" name="party" formControlName="party">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="partyOption.id === editForm.get('party')!.value?.id ? editForm.get('party')!.value : partyOption" *ngFor="let partyOption of parties; trackBy: trackById">{{ partyOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

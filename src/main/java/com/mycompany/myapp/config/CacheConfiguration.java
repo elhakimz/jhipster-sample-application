@@ -47,6 +47,35 @@ public class CacheConfiguration {
             createCache(cm, com.mycompany.myapp.domain.User.class.getName());
             createCache(cm, com.mycompany.myapp.domain.Authority.class.getName());
             createCache(cm, com.mycompany.myapp.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.mycompany.myapp.domain.Party.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.PartyRole.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.RoleType.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.PartyAddress.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.PartyContact.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.PartyIdentification.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.PartyRelationship.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Agreement.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.PartyClassification.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.StatusType.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.CommEvent.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.CommEventPurpose.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.CommEvtPposType.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.ContactMech.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.ContactMechType.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.PartyContactMech.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.PartyContactMechPpos.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.ContactMechPposType.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.ContactMechLink.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.FacilityRole.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.FacilityRoleType.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Facility.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.PartyFacility.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.FacilityContactMech.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Casus.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.CasusRole.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.CasusRoleType.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.WorkEffort.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.CommWorkEffort.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

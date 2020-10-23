@@ -1,0 +1,42 @@
+{
+  "name": "Facility",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "area",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "facilityType",
+      "fieldType": "FacilityType",
+      "fieldValues": "WAREHOUSE,BUILDING,OFFICE,PLANT,ROOM,FLOOR,FIELD"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "facility",
+      "otherEntityRelationshipName": "facility",
+      "relationshipName": "parent",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201023033135",
+  "entityTableName": "facility",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

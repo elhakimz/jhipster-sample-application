@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-party-contact-mech-ppos-heading" jhiTranslate="jhipsterSampleApplicationApp.partyContactMechPpos.home.createOrEditLabel">Create or edit a Party Contact Mech Ppos</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.partyContactMechPpos.fromDate" for="field_fromDate">From Date</label>
+                    <div class="input-group">
+                        <input id="field_fromDate" type="text" class="form-control" name="fromDate" ngbDatepicker #fromDateDp="ngbDatepicker" formControlName="fromDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="fromDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.partyContactMechPpos.thruDate" for="field_thruDate">Thru Date</label>
+                    <div class="input-group">
+                        <input id="field_thruDate" type="text" class="form-control" name="thruDate" ngbDatepicker #thruDateDp="ngbDatepicker" formControlName="thruDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="thruDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.partyContactMechPpos.partyContactMechanism" for="field_partyContactMechanism">Party Contact Mechanism</label>
+                    <select class="form-control" id="field_partyContactMechanism" name="partyContactMechanism" formControlName="partyContactMechanism">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="partyContactMechOption.id === editForm.get('partyContactMechanism')!.value?.id ? editForm.get('partyContactMechanism')!.value : partyContactMechOption" *ngFor="let partyContactMechOption of partycontactmeches; trackBy: trackById">{{ partyContactMechOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.partyContactMechPpos.contactMechanismPurposeType" for="field_contactMechanismPurposeType">Contact Mechanism Purpose Type</label>
+                    <select class="form-control" id="field_contactMechanismPurposeType" name="contactMechanismPurposeType" formControlName="contactMechanismPurposeType">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="contactMechPposTypeOption.id === editForm.get('contactMechanismPurposeType')!.value?.id ? editForm.get('contactMechanismPurposeType')!.value : contactMechPposTypeOption" *ngFor="let contactMechPposTypeOption of contactmechppostypes; trackBy: trackById">{{ contactMechPposTypeOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

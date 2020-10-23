@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity CommEvent.
+    -->
+    <changeSet id="20201023032035-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="context_of_id"
+                                 baseTableName="comm_event"
+                                 constraintName="fk_comm_event_context_of_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="party_relationship"/>
+
+        <addForeignKeyConstraint baseColumnNames="occurs_via_id"
+                                 baseTableName="comm_event"
+                                 constraintName="fk_comm_event_occurs_via_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="contact_mech_type"/>
+
+        <addForeignKeyConstraint baseColumnNames="casus_id"
+                                 baseTableName="comm_event"
+                                 constraintName="fk_comm_event_casus_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="casus"/>
+
+    </changeSet>
+</databaseChangeLog>

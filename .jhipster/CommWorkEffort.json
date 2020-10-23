@@ -1,0 +1,36 @@
+{
+  "name": "CommWorkEffort",
+  "fields": [
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "workEffort",
+      "otherEntityRelationshipName": "commWorkEffort",
+      "relationshipName": "workEffort",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "commEvent",
+      "otherEntityRelationshipName": "commWorkEffort",
+      "relationshipName": "communicationEvent",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201023033835",
+  "entityTableName": "comm_work_effort",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

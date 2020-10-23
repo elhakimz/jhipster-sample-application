@@ -1,0 +1,23 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "commEvtPposType": {
+      "home": {
+        "title": "Comm Evt Ppos Types",
+        "createLabel": "Create a new Comm Evt Ppos Type",
+        "createOrEditLabel": "Create or edit a Comm Evt Ppos Type",
+        "notFound": "No Comm Evt Ppos Types found"
+      },
+      "created": "A new Comm Evt Ppos Type is created with identifier {{ param }}",
+      "updated": "A Comm Evt Ppos Type is updated with identifier {{ param }}",
+      "deleted": "A Comm Evt Ppos Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Comm Evt Ppos Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Comm Evt Ppos Type"
+      },
+      "code": "Code",
+      "description": "Description"
+    }
+  }
+}

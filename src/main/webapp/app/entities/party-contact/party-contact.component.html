@@ -1,0 +1,71 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.partyContact.home.title">Party Contacts</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-party-contact" [routerLink]="['/party-contact/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplicationApp.partyContact.home.createLabel">
+            Create a new Party Contact
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="partyContacts?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplicationApp.partyContact.home.notFound">No partyContacts found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="partyContacts && partyContacts.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.partyContact.contactType">Contact Type</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.partyContact.number">Number</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.partyContact.primary">Primary</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.partyContact.party">Party</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let partyContact of partyContacts ;trackBy: trackId">
+                    <td><a [routerLink]="['/party-contact', partyContact.id, 'view']">{{ partyContact.id }}</a></td>
+                    <td jhiTranslate="{{ 'jhipsterSampleApplicationApp.ContactType.' + partyContact.contactType }}">{{ partyContact.contactType }}</td>
+                    <td>{{ partyContact.number }}</td>
+                    <td>{{ partyContact.primary }}</td>
+                    <td>
+                        <div *ngIf="partyContact.party">
+                            <a [routerLink]="['/party', partyContact.party?.id, 'view']" >{{ partyContact.party?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/party-contact', partyContact.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/party-contact', partyContact.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(partyContact)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

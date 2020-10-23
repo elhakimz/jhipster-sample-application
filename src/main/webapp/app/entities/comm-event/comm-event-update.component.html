@@ -1,0 +1,76 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-comm-event-heading" jhiTranslate="jhipsterSampleApplicationApp.commEvent.home.createOrEditLabel">Create or edit a Comm Event</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.commEvent.eventId" for="field_eventId">Event Id</label>
+                    <input type="text" class="form-control" name="eventId" id="field_eventId"
+                           formControlName="eventId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.commEvent.started" for="field_started">Started</label>
+                    <div class="d-flex">
+                        <input id="field_started" type="datetime-local" class="form-control" name="started" formControlName="started" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.commEvent.ended" for="field_ended">Ended</label>
+                    <div class="d-flex">
+                        <input id="field_ended" type="datetime-local" class="form-control" name="ended" formControlName="ended" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.commEvent.note" for="field_note">Note</label>
+                    <input type="text" class="form-control" name="note" id="field_note"
+                           formControlName="note"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.commEvent.contextOf" for="field_contextOf">Context Of</label>
+                    <select class="form-control" id="field_contextOf" name="contextOf" formControlName="contextOf">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="partyRelationshipOption.id === editForm.get('contextOf')!.value?.id ? editForm.get('contextOf')!.value : partyRelationshipOption" *ngFor="let partyRelationshipOption of partyrelationships; trackBy: trackById">{{ partyRelationshipOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.commEvent.occursVia" for="field_occursVia">Occurs Via</label>
+                    <select class="form-control" id="field_occursVia" name="occursVia" formControlName="occursVia">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="contactMechTypeOption.id === editForm.get('occursVia')!.value?.id ? editForm.get('occursVia')!.value : contactMechTypeOption" *ngFor="let contactMechTypeOption of contactmechtypes; trackBy: trackById">{{ contactMechTypeOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.commEvent.casus" for="field_casus">Casus</label>
+                    <select class="form-control" id="field_casus" name="casus" formControlName="casus">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="casusOption.id === editForm.get('casus')!.value?.id ? editForm.get('casus')!.value : casusOption" *ngFor="let casusOption of casuses; trackBy: trackById">{{ casusOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

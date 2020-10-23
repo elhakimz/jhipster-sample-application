@@ -1,0 +1,28 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "commEvent": {
+      "home": {
+        "title": "Comm Events",
+        "createLabel": "Create a new Comm Event",
+        "createOrEditLabel": "Create or edit a Comm Event",
+        "notFound": "No Comm Events found"
+      },
+      "created": "A new Comm Event is created with identifier {{ param }}",
+      "updated": "A Comm Event is updated with identifier {{ param }}",
+      "deleted": "A Comm Event is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Comm Event {{ id }}?"
+      },
+      "detail": {
+        "title": "Comm Event"
+      },
+      "eventId": "Event Id",
+      "started": "Started",
+      "ended": "Ended",
+      "note": "Note",
+      "contextOf": "Context Of",
+      "occursVia": "Occurs Via",
+      "casus": "Casus"
+    }
+  }
+}

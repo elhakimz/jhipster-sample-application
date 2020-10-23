@@ -1,0 +1,16 @@
+{
+  "name": "CasusRoleType",
+  "fields": [],
+  "relationships": [],
+  "changelogDate": "20201023033635",
+  "entityTableName": "casus_role_type",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

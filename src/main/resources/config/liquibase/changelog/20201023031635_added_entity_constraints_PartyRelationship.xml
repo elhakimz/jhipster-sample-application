@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity PartyRelationship.
+    -->
+    <changeSet id="20201023031635-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="from_party_role_id"
+                                 baseTableName="party_relationship"
+                                 constraintName="fk_party_relationship_from_party_role_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="party_role"/>
+
+        <addForeignKeyConstraint baseColumnNames="to_party_role_id"
+                                 baseTableName="party_relationship"
+                                 constraintName="fk_party_relationship_to_party_role_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="party_role"/>
+
+        <addForeignKeyConstraint baseColumnNames="status_type_id"
+                                 baseTableName="party_relationship"
+                                 constraintName="fk_party_relationship_status_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="status_type"/>
+
+    </changeSet>
+</databaseChangeLog>

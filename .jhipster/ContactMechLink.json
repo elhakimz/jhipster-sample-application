@@ -1,0 +1,31 @@
+{
+  "name": "ContactMechLink",
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "contactMech",
+      "otherEntityRelationshipName": "contactMechLink",
+      "relationshipName": "toContactMechanism",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "contactMech",
+      "otherEntityRelationshipName": "contactMechLink",
+      "relationshipName": "fromContactMechanism",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201023032835",
+  "entityTableName": "contact_mech_link",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -14,7 +14,55 @@
     <property name="uuidType" value="varchar(36)" dbms="h2, mysql, mariadb"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023031035_added_entity_Party.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023031135_added_entity_PartyRole.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023031235_added_entity_RoleType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023031335_added_entity_PartyAddress.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023031435_added_entity_PartyContact.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023031535_added_entity_PartyIdentification.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023031635_added_entity_PartyRelationship.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023031735_added_entity_Agreement.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023031835_added_entity_PartyClassification.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023031935_added_entity_StatusType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023032035_added_entity_CommEvent.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023032135_added_entity_CommEventPurpose.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023032235_added_entity_CommEvtPposType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023032335_added_entity_ContactMech.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023032435_added_entity_ContactMechType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023032535_added_entity_PartyContactMech.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023032635_added_entity_PartyContactMechPpos.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023032735_added_entity_ContactMechPposType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023032835_added_entity_ContactMechLink.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023032935_added_entity_FacilityRole.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023033035_added_entity_FacilityRoleType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023033135_added_entity_Facility.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023033235_added_entity_PartyFacility.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023033335_added_entity_FacilityContactMech.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023033435_added_entity_Casus.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023033535_added_entity_CasusRole.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023033635_added_entity_CasusRoleType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023033735_added_entity_WorkEffort.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023033835_added_entity_CommWorkEffort.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20201023031135_added_entity_constraints_PartyRole.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023031335_added_entity_constraints_PartyAddress.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023031435_added_entity_constraints_PartyContact.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023031535_added_entity_constraints_PartyIdentification.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023031635_added_entity_constraints_PartyRelationship.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023031735_added_entity_constraints_Agreement.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023031835_added_entity_constraints_PartyClassification.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023032035_added_entity_constraints_CommEvent.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023032135_added_entity_constraints_CommEventPurpose.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023032335_added_entity_constraints_ContactMech.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023032535_added_entity_constraints_PartyContactMech.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023032635_added_entity_constraints_PartyContactMechPpos.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023032835_added_entity_constraints_ContactMechLink.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023032935_added_entity_constraints_FacilityRole.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023033135_added_entity_constraints_Facility.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023033235_added_entity_constraints_PartyFacility.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023033335_added_entity_constraints_FacilityContactMech.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023033535_added_entity_constraints_CasusRole.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201023033835_added_entity_constraints_CommWorkEffort.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

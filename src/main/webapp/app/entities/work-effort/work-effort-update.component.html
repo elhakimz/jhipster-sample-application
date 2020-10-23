@@ -1,0 +1,93 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-work-effort-heading" jhiTranslate="jhipsterSampleApplicationApp.workEffort.home.createOrEditLabel">Create or edit a Work Effort</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.workEffort.code" for="field_code">Code</label>
+                    <input type="text" class="form-control" name="code" id="field_code"
+                           formControlName="code"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.workEffort.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.workEffort.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                           formControlName="description"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.workEffort.scheduledStart" for="field_scheduledStart">Scheduled Start</label>
+                    <div class="input-group">
+                        <input id="field_scheduledStart" type="text" class="form-control" name="scheduledStart" ngbDatepicker #scheduledStartDp="ngbDatepicker" formControlName="scheduledStart"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="scheduledStartDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.workEffort.scheduledCompletion" for="field_scheduledCompletion">Scheduled Completion</label>
+                    <div class="input-group">
+                        <input id="field_scheduledCompletion" type="text" class="form-control" name="scheduledCompletion" ngbDatepicker #scheduledCompletionDp="ngbDatepicker" formControlName="scheduledCompletion"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="scheduledCompletionDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.workEffort.totalMoneyAllowed" for="field_totalMoneyAllowed">Total Money Allowed</label>
+                    <input type="number" class="form-control" name="totalMoneyAllowed" id="field_totalMoneyAllowed"
+                           formControlName="totalMoneyAllowed"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.workEffort.totalHoursAllowed" for="field_totalHoursAllowed">Total Hours Allowed</label>
+                    <input type="number" class="form-control" name="totalHoursAllowed" id="field_totalHoursAllowed"
+                           formControlName="totalHoursAllowed"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.workEffort.estimatedHours" for="field_estimatedHours">Estimated Hours</label>
+                    <input type="number" class="form-control" name="estimatedHours" id="field_estimatedHours"
+                           formControlName="estimatedHours"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.workEffort.workEffortType" for="field_workEffortType">Work Effort Type</label>
+                    <select class="form-control" name="workEffortType" formControlName="workEffortType" id="field_workEffortType">
+                        <option value="PROGRAM">{{ 'jhipsterSampleApplicationApp.WorkEffortType.PROGRAM' | translate }}</option>
+                        <option value="PHASE">{{ 'jhipsterSampleApplicationApp.WorkEffortType.PHASE' | translate }}</option>
+                        <option value="PROJECT">{{ 'jhipsterSampleApplicationApp.WorkEffortType.PROJECT' | translate }}</option>
+                        <option value="TASK">{{ 'jhipsterSampleApplicationApp.WorkEffortType.TASK' | translate }}</option>
+                        <option value="ACTIVITY">{{ 'jhipsterSampleApplicationApp.WorkEffortType.ACTIVITY' | translate }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

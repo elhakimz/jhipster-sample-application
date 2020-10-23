@@ -1,0 +1,11 @@
+export const enum PartyClassType {
+  ORG_MINORITY = 'ORG_MINORITY',
+
+  ORG_INDUSTRY = 'ORG_INDUSTRY',
+
+  ORG_SIZE = 'ORG_SIZE',
+
+  PERSON_EEOC = 'PERSON_EEOC',
+
+  PERSON_INCOME = 'PERSON_INCOME',
+}

@@ -1,0 +1,23 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "contactMechPposType": {
+      "home": {
+        "title": "Contact Mech Ppos Types",
+        "createLabel": "Create a new Contact Mech Ppos Type",
+        "createOrEditLabel": "Create or edit a Contact Mech Ppos Type",
+        "notFound": "No Contact Mech Ppos Types found"
+      },
+      "created": "A new Contact Mech Ppos Type is created with identifier {{ param }}",
+      "updated": "A Contact Mech Ppos Type is updated with identifier {{ param }}",
+      "deleted": "A Contact Mech Ppos Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Contact Mech Ppos Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Contact Mech Ppos Type"
+      },
+      "code": "Code",
+      "description": "Description"
+    }
+  }
+}

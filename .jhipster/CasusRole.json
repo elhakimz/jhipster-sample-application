@@ -1,0 +1,24 @@
+{
+  "name": "CasusRole",
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "casusRoleType",
+      "otherEntityRelationshipName": "casusRole",
+      "relationshipName": "roleType",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201023033535",
+  "entityTableName": "casus_role",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

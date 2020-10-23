@@ -1,0 +1,23 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "partyFacility": {
+      "home": {
+        "title": "Party Facilities",
+        "createLabel": "Create a new Party Facility",
+        "createOrEditLabel": "Create or edit a Party Facility",
+        "notFound": "No Party Facilities found"
+      },
+      "created": "A new Party Facility is created with identifier {{ param }}",
+      "updated": "A Party Facility is updated with identifier {{ param }}",
+      "deleted": "A Party Facility is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Party Facility {{ id }}?"
+      },
+      "detail": {
+        "title": "Party Facility"
+      },
+      "party": "Party",
+      "facility": "Facility"
+    }
+  }
+}

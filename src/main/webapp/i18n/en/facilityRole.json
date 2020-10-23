@@ -1,0 +1,24 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "facilityRole": {
+      "home": {
+        "title": "Facility Roles",
+        "createLabel": "Create a new Facility Role",
+        "createOrEditLabel": "Create or edit a Facility Role",
+        "notFound": "No Facility Roles found"
+      },
+      "created": "A new Facility Role is created with identifier {{ param }}",
+      "updated": "A Facility Role is updated with identifier {{ param }}",
+      "deleted": "A Facility Role is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Facility Role {{ id }}?"
+      },
+      "detail": {
+        "title": "Facility Role"
+      },
+      "party": "Party",
+      "facilityRoleType": "Facility Role Type",
+      "facility": "Facility"
+    }
+  }
+}

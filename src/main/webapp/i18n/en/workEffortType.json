@@ -1,0 +1,12 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "WorkEffortType": {
+      "null": "",
+      "PROGRAM": "PROGRAM",
+      "PHASE": "PHASE",
+      "PROJECT": "PROJECT",
+      "TASK": "TASK",
+      "ACTIVITY": "ACTIVITY"
+    }
+  }
+}
