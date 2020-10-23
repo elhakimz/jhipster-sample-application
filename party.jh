@@ -1,0 +1,274 @@
+application{
+  config{
+  
+  }
+}
+
+entity Party{
+  name String required,
+  firstName String,
+  lastName String,
+  birthDate Date,
+  birthPlace String,
+  gender Gender, 
+  partyType PartyType
+}
+
+enum PartyType{
+ PERSON, ORGANIZATION
+}
+
+enum Gender{
+ MALE, FEMALE, OTHER
+}
+
+entity PartyRole{
+  name String required
+}
+
+entity RoleType{
+   name String required,
+   description String
+}
+
+entity PartyAddress{
+  addressLine1 String,
+  addressLine2 String,
+  city String,
+}
+
+entity PartyContact{
+   contactType ContactType required,
+   number String,
+   primary Boolean
+}
+
+enum ContactType{
+ PHONE, EMAIL, WEBSITE
+}
+
+entity PartyIdentification{
+    identificationType IdentificationType required,
+    identNo String,
+    validDate Date
+    
+}
+
+enum IdentificationType{
+   KTP, PASSPORT, NPWP, BPJS
+}
+
+entity  PartyRelationship{
+    partyRelationshipType PartyRelationshipType required
+    fromPartyRole PartyRole required,
+    toPartyRole PartyRole required,
+    fromDate Date,
+    thruDate Date,
+    name String,
+    description String
+    priorityType PriorityType
+}
+
+enum PartyRelationshipType{
+   EMPLOYMENT, PURCHASE, SALES, PARTNERSHIP, CONTACT,
+   CUSTOMER, DISTRCHANNEL
+}
+
+entity Agreement{
+   agreementNo String,
+   agreementDate Date,
+   name String,
+   description String
+}
+
+entity PartyClassification{
+    fromDate Date
+    thruDate Date
+    partyClassType PartyClassType
+}
+
+enum PartyClassType{
+  ORG_MINORITY, ORG_INDUSTRY, ORG_SIZE,
+  PERSON_EEOC, PERSON_INCOME
+}
+
+enum PriorityType{
+  HIGH, MEDIUM, LOW
+}
+
+entity StatusType{
+  code String,
+  name String
+}
+
+entity CommunicationEvent{
+  eventId String
+  started DateTime
+  ended DateTime
+  note String
+}
+
+entity CommunicationEventPurpose{
+  description String
+}
+
+entity CommunicationEventPurposeType{
+   code String
+   description String
+}
+entity ContactMechanism{
+   code String
+   areaCode String
+   countryCode String
+   contactNumber String
+   address1 String
+   address2 String
+   directions String
+   electronicAddress String
+}
+
+entity ContactMechanismType{
+   code String
+   name String
+}
+
+entity PartyContactMechanism{
+   fromDate Date
+   thruDate Date
+   nonSolicitation Boolean
+}
+
+entity PartyContactMechanismPurpose{
+  fromDate Date
+  thruDate Date
+}
+
+entity ContactMechanismPurposeType{
+  code String
+  description String
+}
+
+entity ContactMechanismLink{
+}
+
+entity FacilityRole{
+  
+}
+
+entity FacilityRoleType{
+  code String
+  description String
+}
+
+entity Facility{
+  code String
+  description String
+  area Double
+  facilityType FacilityType
+}
+
+entity PartyFacility{
+
+}
+
+entity FacilityContactMechanism{
+
+}
+
+enum FacilityType{
+  WAREHOUSE, BUILDING, OFFICE,
+  PLANT, ROOM, FLOOR, FIELD
+}
+
+entity FacilityContactMechanism{
+
+}
+entity Casus{
+  code String
+  description String
+  start DateTime
+  statusType CasusStatusType
+}
+
+entity CasusRole{
+}
+
+entity CasusRoleType{
+
+}
+
+enum CasusStatusType{
+  ACTIVE
+}
+
+entity WorkEffort{
+  code String
+  name String
+  description String
+  scheduledStart Date
+  scheduledCompletion Date
+  totalMoneyAllowed BigDecimal
+  totalHoursAllowed Double
+  estimatedHours Double
+  workEffortType WorkEffortType
+}
+
+enum WorkEffortType{
+ PROGRAM, PHASE, PROJECT, TASK, ACTIVITY
+}
+
+entity CommunicationWorkEffort{
+   description String
+}
+
+relationship ManyToOne{
+  PartyRole{party} to Party
+  PartyRole{roleType} to RoleType
+  PartyAddress{party} to Party
+  PartyContact{party} to Party
+  PartyIdentification{party} to Party
+  PartyRelationship{fromPartyRole} to PartyRole
+  PartyRelationship{toPartyRole} to PartyRole
+  PartyRelationship{statusType} to StatusType
+  Agreement{partyRelationship} to PartyRelationship
+  PartyClassification{party} to Party
+  CommunicationEvent{contextOf} to PartyRelationship
+  PartyContactMechanism{party} to Party
+  PartyContactMechanism{contactMechanism} to ContactMechanism
+  ContactMechanism{contactMechanismType} to ContactMechanismType
+  PartyContactMechanismPurpose{partyContactMechanism} to PartyContactMechanism
+  PartyContactMechanismPurpose{contactMechanismPurposeType} to ContactMechanismPurposeType
+  ContactMechanismLink{toContactMechanism} to ContactMechanism
+  ContactMechanismLink{fromContactMechanism} to ContactMechanism
+  FacilityRole{party} to Party
+  FacilityRole{facilityRoleType} to FacilityRoleType
+  FacilityRole{facility} to Facility
+  Facility{parent} to Facility
+  FacilityContactMechanism{contactMechanism} to ContactMechanism
+  FacilityContactMechanism{facility} to Facility
+  CommunicationEventPurpose{communicationEvent} to CommunicationEvent
+  CommunicationEventPurpose{purposeType} to CommunicationEventPurposeType
+  CommunicationEvent{occursVia} to ContactMechanismType
+  PartyFacility{party} to Party
+  PartyFacility{facility} to Facility
+  FacilityContactMechanism{facility} to Facility
+  FacilityContactMechanism{communicationEvent} to CommunicationEvent
+  CommunicationWorkEffort{workEffort} to WorkEffort
+  CommunicationWorkEffort{communicationEvent} to CommunicationEvent
+  CommunicationEvent{casus} to Casus
+  CasusRole{roleType} to CasusRoleType
+}
+
+enum Language {
+    ENGLISH, INDONESIAN, CHINESE
+}
+
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Employee, Job
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
