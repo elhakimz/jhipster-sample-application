@@ -1,0 +1,40 @@
+{
+  "name": "PartyContactMechPpos",
+  "fields": [
+    {
+      "fieldName": "fromDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "thruDate",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "partyContactMech",
+      "otherEntityRelationshipName": "partyContactMechPpos",
+      "relationshipName": "partyContactMechanism",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "contactMechPposType",
+      "otherEntityRelationshipName": "partyContactMechPpos",
+      "relationshipName": "contactMechanismPurposeType",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201023032635",
+  "entityTableName": "party_contact_mech_ppos",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

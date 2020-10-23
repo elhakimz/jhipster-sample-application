@@ -1,0 +1,67 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.casus.home.title">Casuses</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-casus" [routerLink]="['/casus/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplicationApp.casus.home.createLabel">
+            Create a new Casus
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="casuses?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplicationApp.casus.home.notFound">No casuses found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="casuses && casuses.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.casus.code">Code</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.casus.description">Description</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.casus.start">Start</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.casus.statusType">Status Type</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let casus of casuses ;trackBy: trackId">
+                    <td><a [routerLink]="['/casus', casus.id, 'view']">{{ casus.id }}</a></td>
+                    <td>{{ casus.code }}</td>
+                    <td>{{ casus.description }}</td>
+                    <td>{{ casus.start | date:'medium' }}</td>
+                    <td jhiTranslate="{{ 'jhipsterSampleApplicationApp.CasusStatusType.' + casus.statusType }}">{{ casus.statusType }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/casus', casus.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/casus', casus.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(casus)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

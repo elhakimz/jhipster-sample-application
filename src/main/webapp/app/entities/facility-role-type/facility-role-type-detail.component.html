@@ -1,0 +1,34 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="facilityRoleType">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.facilityRoleType.detail.title">Facility Role Type</span> {{ facilityRoleType.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.facilityRoleType.code">Code</span></dt>
+                <dd>
+                    <span>{{ facilityRoleType.code }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.facilityRoleType.description">Description</span></dt>
+                <dd>
+                    <span>{{ facilityRoleType.description }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/facility-role-type', facilityRoleType.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

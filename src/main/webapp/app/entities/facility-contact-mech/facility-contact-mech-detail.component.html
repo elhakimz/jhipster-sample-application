@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="facilityContactMech">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.facilityContactMech.detail.title">Facility Contact Mech</span> {{ facilityContactMech.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.facilityContactMech.contactMechanism">Contact Mechanism</span></dt>
+                <dd>
+                    <div *ngIf="facilityContactMech.contactMechanism">
+                        <a [routerLink]="['/contact-mech', facilityContactMech.contactMechanism?.id, 'view']">{{ facilityContactMech.contactMechanism?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.facilityContactMech.facility">Facility</span></dt>
+                <dd>
+                    <div *ngIf="facilityContactMech.facility">
+                        <a [routerLink]="['/facility', facilityContactMech.facility?.id, 'view']">{{ facilityContactMech.facility?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.facilityContactMech.communicationEvent">Communication Event</span></dt>
+                <dd>
+                    <div *ngIf="facilityContactMech.communicationEvent">
+                        <a [routerLink]="['/comm-event', facilityContactMech.communicationEvent?.id, 'view']">{{ facilityContactMech.communicationEvent?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/facility-contact-mech', facilityContactMech.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

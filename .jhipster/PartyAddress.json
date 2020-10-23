@@ -1,0 +1,37 @@
+{
+  "name": "PartyAddress",
+  "fields": [
+    {
+      "fieldName": "addressLine1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "addressLine2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "city",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "party",
+      "otherEntityRelationshipName": "partyAddress",
+      "relationshipName": "party",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201023031335",
+  "entityTableName": "party_address",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

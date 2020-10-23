@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity ContactMechLink.
+    -->
+    <changeSet id="20201023032835-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="to_contact_mechanism_id"
+                                 baseTableName="contact_mech_link"
+                                 constraintName="fk_contact_mech_link_to_contact_mechanism_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="contact_mech"/>
+
+        <addForeignKeyConstraint baseColumnNames="from_contact_mechanism_id"
+                                 baseTableName="contact_mech_link"
+                                 constraintName="fk_contact_mech_link_from_contact_mechanism_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="contact_mech"/>
+
+    </changeSet>
+</databaseChangeLog>

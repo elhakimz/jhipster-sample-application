@@ -1,0 +1,24 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "commWorkEffort": {
+      "home": {
+        "title": "Comm Work Efforts",
+        "createLabel": "Create a new Comm Work Effort",
+        "createOrEditLabel": "Create or edit a Comm Work Effort",
+        "notFound": "No Comm Work Efforts found"
+      },
+      "created": "A new Comm Work Effort is created with identifier {{ param }}",
+      "updated": "A Comm Work Effort is updated with identifier {{ param }}",
+      "deleted": "A Comm Work Effort is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Comm Work Effort {{ id }}?"
+      },
+      "detail": {
+        "title": "Comm Work Effort"
+      },
+      "description": "Description",
+      "workEffort": "Work Effort",
+      "communicationEvent": "Communication Event"
+    }
+  }
+}

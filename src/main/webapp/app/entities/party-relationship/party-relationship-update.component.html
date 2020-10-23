@@ -1,0 +1,110 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-party-relationship-heading" jhiTranslate="jhipsterSampleApplicationApp.partyRelationship.home.createOrEditLabel">Create or edit a Party Relationship</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.partyRelationship.partyRelationshipType" for="field_partyRelationshipType">Party Relationship Type</label>
+                    <select class="form-control" name="partyRelationshipType" formControlName="partyRelationshipType" id="field_partyRelationshipType">
+                        <option value="EMPLOYMENT">{{ 'jhipsterSampleApplicationApp.PartyRelType.EMPLOYMENT' | translate }}</option>
+                        <option value="PURCHASE">{{ 'jhipsterSampleApplicationApp.PartyRelType.PURCHASE' | translate }}</option>
+                        <option value="SALES">{{ 'jhipsterSampleApplicationApp.PartyRelType.SALES' | translate }}</option>
+                        <option value="PARTNERSHIP">{{ 'jhipsterSampleApplicationApp.PartyRelType.PARTNERSHIP' | translate }}</option>
+                        <option value="CONTACT">{{ 'jhipsterSampleApplicationApp.PartyRelType.CONTACT' | translate }}</option>
+                        <option value="CUSTOMER">{{ 'jhipsterSampleApplicationApp.PartyRelType.CUSTOMER' | translate }}</option>
+                        <option value="DISTRCHANNEL">{{ 'jhipsterSampleApplicationApp.PartyRelType.DISTRCHANNEL' | translate }}</option>
+                    </select>
+                    <div *ngIf="editForm.get('partyRelationshipType')!.invalid && (editForm.get('partyRelationshipType')!.dirty || editForm.get('partyRelationshipType')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('partyRelationshipType')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.partyRelationship.fromDate" for="field_fromDate">From Date</label>
+                    <div class="input-group">
+                        <input id="field_fromDate" type="text" class="form-control" name="fromDate" ngbDatepicker #fromDateDp="ngbDatepicker" formControlName="fromDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="fromDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.partyRelationship.thruDate" for="field_thruDate">Thru Date</label>
+                    <div class="input-group">
+                        <input id="field_thruDate" type="text" class="form-control" name="thruDate" ngbDatepicker #thruDateDp="ngbDatepicker" formControlName="thruDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="thruDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.partyRelationship.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.partyRelationship.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                           formControlName="description"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.partyRelationship.priorityType" for="field_priorityType">Priority Type</label>
+                    <select class="form-control" name="priorityType" formControlName="priorityType" id="field_priorityType">
+                        <option value="HIGH">{{ 'jhipsterSampleApplicationApp.PriorityType.HIGH' | translate }}</option>
+                        <option value="MEDIUM">{{ 'jhipsterSampleApplicationApp.PriorityType.MEDIUM' | translate }}</option>
+                        <option value="LOW">{{ 'jhipsterSampleApplicationApp.PriorityType.LOW' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.partyRelationship.fromPartyRole" for="field_fromPartyRole">From Party Role</label>
+                    <select class="form-control" id="field_fromPartyRole" name="fromPartyRole" formControlName="fromPartyRole">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="partyRoleOption.id === editForm.get('fromPartyRole')!.value?.id ? editForm.get('fromPartyRole')!.value : partyRoleOption" *ngFor="let partyRoleOption of partyroles; trackBy: trackById">{{ partyRoleOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.partyRelationship.toPartyRole" for="field_toPartyRole">To Party Role</label>
+                    <select class="form-control" id="field_toPartyRole" name="toPartyRole" formControlName="toPartyRole">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="partyRoleOption.id === editForm.get('toPartyRole')!.value?.id ? editForm.get('toPartyRole')!.value : partyRoleOption" *ngFor="let partyRoleOption of partyroles; trackBy: trackById">{{ partyRoleOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.partyRelationship.statusType" for="field_statusType">Status Type</label>
+                    <select class="form-control" id="field_statusType" name="statusType" formControlName="statusType">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="statusTypeOption.id === editForm.get('statusType')!.value?.id ? editForm.get('statusType')!.value : statusTypeOption" *ngFor="let statusTypeOption of statustypes; trackBy: trackById">{{ statusTypeOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+{
+  "name": "PartyIdentification",
+  "fields": [
+    {
+      "fieldName": "identificationType",
+      "fieldType": "IdentificationType",
+      "fieldValues": "KTP,PASSPORT,NPWP,BPJS",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "identNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "validDate",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "party",
+      "otherEntityRelationshipName": "partyIdentification",
+      "relationshipName": "party",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201023031535",
+  "entityTableName": "party_identification",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="partyRole">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.partyRole.detail.title">Party Role</span> {{ partyRole.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.partyRole.name">Name</span></dt>
+                <dd>
+                    <span>{{ partyRole.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.partyRole.party">Party</span></dt>
+                <dd>
+                    <div *ngIf="partyRole.party">
+                        <a [routerLink]="['/party', partyRole.party?.id, 'view']">{{ partyRole.party?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.partyRole.roleType">Role Type</span></dt>
+                <dd>
+                    <div *ngIf="partyRole.roleType">
+                        <a [routerLink]="['/role-type', partyRole.roleType?.id, 'view']">{{ partyRole.roleType?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/party-role', partyRole.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

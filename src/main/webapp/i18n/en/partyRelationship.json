@@ -1,0 +1,30 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "partyRelationship": {
+      "home": {
+        "title": "Party Relationships",
+        "createLabel": "Create a new Party Relationship",
+        "createOrEditLabel": "Create or edit a Party Relationship",
+        "notFound": "No Party Relationships found"
+      },
+      "created": "A new Party Relationship is created with identifier {{ param }}",
+      "updated": "A Party Relationship is updated with identifier {{ param }}",
+      "deleted": "A Party Relationship is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Party Relationship {{ id }}?"
+      },
+      "detail": {
+        "title": "Party Relationship"
+      },
+      "partyRelationshipType": "Party Relationship Type",
+      "fromDate": "From Date",
+      "thruDate": "Thru Date",
+      "name": "Name",
+      "description": "Description",
+      "priorityType": "Priority Type",
+      "fromPartyRole": "From Party Role",
+      "toPartyRole": "To Party Role",
+      "statusType": "Status Type"
+    }
+  }
+}

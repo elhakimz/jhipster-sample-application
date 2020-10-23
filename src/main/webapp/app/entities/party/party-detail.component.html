@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="party">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.party.detail.title">Party</span> {{ party.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.party.name">Name</span></dt>
+                <dd>
+                    <span>{{ party.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.party.firstName">First Name</span></dt>
+                <dd>
+                    <span>{{ party.firstName }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.party.lastName">Last Name</span></dt>
+                <dd>
+                    <span>{{ party.lastName }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.party.birthDate">Birth Date</span></dt>
+                <dd>
+                    <span>{{ party.birthDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.party.birthPlace">Birth Place</span></dt>
+                <dd>
+                    <span>{{ party.birthPlace }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.party.gender">Gender</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhipsterSampleApplicationApp.Gender.' + party.gender }}">{{ party.gender }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.party.partyType">Party Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhipsterSampleApplicationApp.PartyType.' + party.partyType }}">{{ party.partyType }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/party', party.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

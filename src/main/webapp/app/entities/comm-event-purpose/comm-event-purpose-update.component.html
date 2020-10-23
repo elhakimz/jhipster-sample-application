@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-comm-event-purpose-heading" jhiTranslate="jhipsterSampleApplicationApp.commEventPurpose.home.createOrEditLabel">Create or edit a Comm Event Purpose</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.commEventPurpose.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                           formControlName="description"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.commEventPurpose.communicationEvent" for="field_communicationEvent">Communication Event</label>
+                    <select class="form-control" id="field_communicationEvent" name="communicationEvent" formControlName="communicationEvent">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="commEventOption.id === editForm.get('communicationEvent')!.value?.id ? editForm.get('communicationEvent')!.value : commEventOption" *ngFor="let commEventOption of commevents; trackBy: trackById">{{ commEventOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.commEventPurpose.purposeType" for="field_purposeType">Purpose Type</label>
+                    <select class="form-control" id="field_purposeType" name="purposeType" formControlName="purposeType">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="commEvtPposTypeOption.id === editForm.get('purposeType')!.value?.id ? editForm.get('purposeType')!.value : commEvtPposTypeOption" *ngFor="let commEvtPposTypeOption of commevtppostypes; trackBy: trackById">{{ commEvtPposTypeOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+{
+  "name": "PartyClassification",
+  "fields": [
+    {
+      "fieldName": "fromDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "thruDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "partyClassType",
+      "fieldType": "PartyClassType",
+      "fieldValues": "ORG_MINORITY,ORG_INDUSTRY,ORG_SIZE,PERSON_EEOC,PERSON_INCOME"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "party",
+      "otherEntityRelationshipName": "partyClassification",
+      "relationshipName": "party",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201023031835",
+  "entityTableName": "party_classification",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

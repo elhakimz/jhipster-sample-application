@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="contactMech">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.contactMech.detail.title">Contact Mech</span> {{ contactMech.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.contactMech.code">Code</span></dt>
+                <dd>
+                    <span>{{ contactMech.code }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.contactMech.areaCode">Area Code</span></dt>
+                <dd>
+                    <span>{{ contactMech.areaCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.contactMech.countryCode">Country Code</span></dt>
+                <dd>
+                    <span>{{ contactMech.countryCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.contactMech.contactNumber">Contact Number</span></dt>
+                <dd>
+                    <span>{{ contactMech.contactNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.contactMech.address1">Address 1</span></dt>
+                <dd>
+                    <span>{{ contactMech.address1 }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.contactMech.address2">Address 2</span></dt>
+                <dd>
+                    <span>{{ contactMech.address2 }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.contactMech.directions">Directions</span></dt>
+                <dd>
+                    <span>{{ contactMech.directions }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.contactMech.electronicAddress">Electronic Address</span></dt>
+                <dd>
+                    <span>{{ contactMech.electronicAddress }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.contactMech.contactMechanismType">Contact Mechanism Type</span></dt>
+                <dd>
+                    <div *ngIf="contactMech.contactMechanismType">
+                        <a [routerLink]="['/contact-mech-type', contactMech.contactMechanismType?.id, 'view']">{{ contactMech.contactMechanismType?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/contact-mech', contactMech.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

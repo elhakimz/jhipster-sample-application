@@ -1,0 +1,25 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "partyContactMechPpos": {
+      "home": {
+        "title": "Party Contact Mech Ppos",
+        "createLabel": "Create a new Party Contact Mech Ppos",
+        "createOrEditLabel": "Create or edit a Party Contact Mech Ppos",
+        "notFound": "No Party Contact Mech Ppos found"
+      },
+      "created": "A new Party Contact Mech Ppos is created with identifier {{ param }}",
+      "updated": "A Party Contact Mech Ppos is updated with identifier {{ param }}",
+      "deleted": "A Party Contact Mech Ppos is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Party Contact Mech Ppos {{ id }}?"
+      },
+      "detail": {
+        "title": "Party Contact Mech Ppos"
+      },
+      "fromDate": "From Date",
+      "thruDate": "Thru Date",
+      "partyContactMechanism": "Party Contact Mechanism",
+      "contactMechanismPurposeType": "Contact Mechanism Purpose Type"
+    }
+  }
+}

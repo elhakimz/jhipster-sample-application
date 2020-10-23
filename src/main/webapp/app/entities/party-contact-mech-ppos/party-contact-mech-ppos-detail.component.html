@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="partyContactMechPpos">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.partyContactMechPpos.detail.title">Party Contact Mech Ppos</span> {{ partyContactMechPpos.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.partyContactMechPpos.fromDate">From Date</span></dt>
+                <dd>
+                    <span>{{ partyContactMechPpos.fromDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.partyContactMechPpos.thruDate">Thru Date</span></dt>
+                <dd>
+                    <span>{{ partyContactMechPpos.thruDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.partyContactMechPpos.partyContactMechanism">Party Contact Mechanism</span></dt>
+                <dd>
+                    <div *ngIf="partyContactMechPpos.partyContactMechanism">
+                        <a [routerLink]="['/party-contact-mech', partyContactMechPpos.partyContactMechanism?.id, 'view']">{{ partyContactMechPpos.partyContactMechanism?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.partyContactMechPpos.contactMechanismPurposeType">Contact Mechanism Purpose Type</span></dt>
+                <dd>
+                    <div *ngIf="partyContactMechPpos.contactMechanismPurposeType">
+                        <a [routerLink]="['/contact-mech-ppos-type', partyContactMechPpos.contactMechanismPurposeType?.id, 'view']">{{ partyContactMechPpos.contactMechanismPurposeType?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/party-contact-mech-ppos', partyContactMechPpos.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

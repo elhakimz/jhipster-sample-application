@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity CommWorkEffort.
+    -->
+    <changeSet id="20201023033835-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="work_effort_id"
+                                 baseTableName="comm_work_effort"
+                                 constraintName="fk_comm_work_effort_work_effort_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="work_effort"/>
+
+        <addForeignKeyConstraint baseColumnNames="communication_event_id"
+                                 baseTableName="comm_work_effort"
+                                 constraintName="fk_comm_work_effort_communication_event_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="comm_event"/>
+
+    </changeSet>
+</databaseChangeLog>

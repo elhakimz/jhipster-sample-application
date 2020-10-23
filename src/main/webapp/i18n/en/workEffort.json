@@ -1,0 +1,30 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "workEffort": {
+      "home": {
+        "title": "Work Efforts",
+        "createLabel": "Create a new Work Effort",
+        "createOrEditLabel": "Create or edit a Work Effort",
+        "notFound": "No Work Efforts found"
+      },
+      "created": "A new Work Effort is created with identifier {{ param }}",
+      "updated": "A Work Effort is updated with identifier {{ param }}",
+      "deleted": "A Work Effort is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Work Effort {{ id }}?"
+      },
+      "detail": {
+        "title": "Work Effort"
+      },
+      "code": "Code",
+      "name": "Name",
+      "description": "Description",
+      "scheduledStart": "Scheduled Start",
+      "scheduledCompletion": "Scheduled Completion",
+      "totalMoneyAllowed": "Total Money Allowed",
+      "totalHoursAllowed": "Total Hours Allowed",
+      "estimatedHours": "Estimated Hours",
+      "workEffortType": "Work Effort Type"
+    }
+  }
+}

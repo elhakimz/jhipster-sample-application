@@ -1,0 +1,23 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "contactMechLink": {
+      "home": {
+        "title": "Contact Mech Links",
+        "createLabel": "Create a new Contact Mech Link",
+        "createOrEditLabel": "Create or edit a Contact Mech Link",
+        "notFound": "No Contact Mech Links found"
+      },
+      "created": "A new Contact Mech Link is created with identifier {{ param }}",
+      "updated": "A Contact Mech Link is updated with identifier {{ param }}",
+      "deleted": "A Contact Mech Link is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Contact Mech Link {{ id }}?"
+      },
+      "detail": {
+        "title": "Contact Mech Link"
+      },
+      "toContactMechanism": "To Contact Mechanism",
+      "fromContactMechanism": "From Contact Mechanism"
+    }
+  }
+}

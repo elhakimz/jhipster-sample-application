@@ -1,0 +1,36 @@
+{
+  "name": "CommEventPurpose",
+  "fields": [
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "commEvent",
+      "otherEntityRelationshipName": "commEventPurpose",
+      "relationshipName": "communicationEvent",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "commEvtPposType",
+      "otherEntityRelationshipName": "commEventPurpose",
+      "relationshipName": "purposeType",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201023032135",
+  "entityTableName": "comm_event_purpose",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

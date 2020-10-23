@@ -1,0 +1,82 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-contact-mech-heading" jhiTranslate="jhipsterSampleApplicationApp.contactMech.home.createOrEditLabel">Create or edit a Contact Mech</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.contactMech.code" for="field_code">Code</label>
+                    <input type="text" class="form-control" name="code" id="field_code"
+                           formControlName="code"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.contactMech.areaCode" for="field_areaCode">Area Code</label>
+                    <input type="text" class="form-control" name="areaCode" id="field_areaCode"
+                           formControlName="areaCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.contactMech.countryCode" for="field_countryCode">Country Code</label>
+                    <input type="text" class="form-control" name="countryCode" id="field_countryCode"
+                           formControlName="countryCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.contactMech.contactNumber" for="field_contactNumber">Contact Number</label>
+                    <input type="text" class="form-control" name="contactNumber" id="field_contactNumber"
+                           formControlName="contactNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.contactMech.address1" for="field_address1">Address 1</label>
+                    <input type="text" class="form-control" name="address1" id="field_address1"
+                           formControlName="address1"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.contactMech.address2" for="field_address2">Address 2</label>
+                    <input type="text" class="form-control" name="address2" id="field_address2"
+                           formControlName="address2"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.contactMech.directions" for="field_directions">Directions</label>
+                    <input type="text" class="form-control" name="directions" id="field_directions"
+                           formControlName="directions"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.contactMech.electronicAddress" for="field_electronicAddress">Electronic Address</label>
+                    <input type="text" class="form-control" name="electronicAddress" id="field_electronicAddress"
+                           formControlName="electronicAddress"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.contactMech.contactMechanismType" for="field_contactMechanismType">Contact Mechanism Type</label>
+                    <select class="form-control" id="field_contactMechanismType" name="contactMechanismType" formControlName="contactMechanismType">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="contactMechTypeOption.id === editForm.get('contactMechanismType')!.value?.id ? editForm.get('contactMechanismType')!.value : contactMechTypeOption" *ngFor="let contactMechTypeOption of contactmechtypes; trackBy: trackById">{{ contactMechTypeOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,81 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.contactMech.home.title">Contact Meches</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-contact-mech" [routerLink]="['/contact-mech/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplicationApp.contactMech.home.createLabel">
+            Create a new Contact Mech
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="contactMeches?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplicationApp.contactMech.home.notFound">No contactMeches found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="contactMeches && contactMeches.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.contactMech.code">Code</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.contactMech.areaCode">Area Code</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.contactMech.countryCode">Country Code</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.contactMech.contactNumber">Contact Number</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.contactMech.address1">Address 1</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.contactMech.address2">Address 2</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.contactMech.directions">Directions</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.contactMech.electronicAddress">Electronic Address</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.contactMech.contactMechanismType">Contact Mechanism Type</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let contactMech of contactMeches ;trackBy: trackId">
+                    <td><a [routerLink]="['/contact-mech', contactMech.id, 'view']">{{ contactMech.id }}</a></td>
+                    <td>{{ contactMech.code }}</td>
+                    <td>{{ contactMech.areaCode }}</td>
+                    <td>{{ contactMech.countryCode }}</td>
+                    <td>{{ contactMech.contactNumber }}</td>
+                    <td>{{ contactMech.address1 }}</td>
+                    <td>{{ contactMech.address2 }}</td>
+                    <td>{{ contactMech.directions }}</td>
+                    <td>{{ contactMech.electronicAddress }}</td>
+                    <td>
+                        <div *ngIf="contactMech.contactMechanismType">
+                            <a [routerLink]="['/contact-mech-type', contactMech.contactMechanismType?.id, 'view']" >{{ contactMech.contactMechanismType?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/contact-mech', contactMech.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/contact-mech', contactMech.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(contactMech)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

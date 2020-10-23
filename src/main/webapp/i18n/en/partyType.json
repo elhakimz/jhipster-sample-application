@@ -1,0 +1,9 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "PartyType": {
+      "null": "",
+      "PERSON": "PERSON",
+      "ORGANIZATION": "ORGANIZATION"
+    }
+  }
+}

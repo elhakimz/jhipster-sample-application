@@ -1,0 +1,21 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "casusRoleType": {
+      "home": {
+        "title": "Casus Role Types",
+        "createLabel": "Create a new Casus Role Type",
+        "createOrEditLabel": "Create or edit a Casus Role Type",
+        "notFound": "No Casus Role Types found"
+      },
+      "created": "A new Casus Role Type is created with identifier {{ param }}",
+      "updated": "A Casus Role Type is updated with identifier {{ param }}",
+      "deleted": "A Casus Role Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Casus Role Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Casus Role Type"
+      }
+    }
+  }
+}

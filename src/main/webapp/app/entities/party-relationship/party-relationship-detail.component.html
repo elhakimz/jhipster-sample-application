@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="partyRelationship">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.partyRelationship.detail.title">Party Relationship</span> {{ partyRelationship.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.partyRelationship.partyRelationshipType">Party Relationship Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhipsterSampleApplicationApp.PartyRelType.' + partyRelationship.partyRelationshipType }}">{{ partyRelationship.partyRelationshipType }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.partyRelationship.fromDate">From Date</span></dt>
+                <dd>
+                    <span>{{ partyRelationship.fromDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.partyRelationship.thruDate">Thru Date</span></dt>
+                <dd>
+                    <span>{{ partyRelationship.thruDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.partyRelationship.name">Name</span></dt>
+                <dd>
+                    <span>{{ partyRelationship.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.partyRelationship.description">Description</span></dt>
+                <dd>
+                    <span>{{ partyRelationship.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.partyRelationship.priorityType">Priority Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhipsterSampleApplicationApp.PriorityType.' + partyRelationship.priorityType }}">{{ partyRelationship.priorityType }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.partyRelationship.fromPartyRole">From Party Role</span></dt>
+                <dd>
+                    <div *ngIf="partyRelationship.fromPartyRole">
+                        <a [routerLink]="['/party-role', partyRelationship.fromPartyRole?.id, 'view']">{{ partyRelationship.fromPartyRole?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.partyRelationship.toPartyRole">To Party Role</span></dt>
+                <dd>
+                    <div *ngIf="partyRelationship.toPartyRole">
+                        <a [routerLink]="['/party-role', partyRelationship.toPartyRole?.id, 'view']">{{ partyRelationship.toPartyRole?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.partyRelationship.statusType">Status Type</span></dt>
+                <dd>
+                    <div *ngIf="partyRelationship.statusType">
+                        <a [routerLink]="['/status-type', partyRelationship.statusType?.id, 'view']">{{ partyRelationship.statusType?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/party-relationship', partyRelationship.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

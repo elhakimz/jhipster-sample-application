@@ -1,0 +1,71 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.partyIdentification.home.title">Party Identifications</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-party-identification" [routerLink]="['/party-identification/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplicationApp.partyIdentification.home.createLabel">
+            Create a new Party Identification
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="partyIdentifications?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplicationApp.partyIdentification.home.notFound">No partyIdentifications found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="partyIdentifications && partyIdentifications.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.partyIdentification.identificationType">Identification Type</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.partyIdentification.identNo">Ident No</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.partyIdentification.validDate">Valid Date</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.partyIdentification.party">Party</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let partyIdentification of partyIdentifications ;trackBy: trackId">
+                    <td><a [routerLink]="['/party-identification', partyIdentification.id, 'view']">{{ partyIdentification.id }}</a></td>
+                    <td jhiTranslate="{{ 'jhipsterSampleApplicationApp.IdentificationType.' + partyIdentification.identificationType }}">{{ partyIdentification.identificationType }}</td>
+                    <td>{{ partyIdentification.identNo }}</td>
+                    <td>{{ partyIdentification.validDate | date:'mediumDate' }}</td>
+                    <td>
+                        <div *ngIf="partyIdentification.party">
+                            <a [routerLink]="['/party', partyIdentification.party?.id, 'view']" >{{ partyIdentification.party?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/party-identification', partyIdentification.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/party-identification', partyIdentification.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(partyIdentification)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "PartyRelType": {
+      "null": "",
+      "EMPLOYMENT": "EMPLOYMENT",
+      "PURCHASE": "PURCHASE",
+      "SALES": "SALES",
+      "PARTNERSHIP": "PARTNERSHIP",
+      "CONTACT": "CONTACT",
+      "CUSTOMER": "CUSTOMER",
+      "DISTRCHANNEL": "DISTRCHANNEL"
+    }
+  }
+}

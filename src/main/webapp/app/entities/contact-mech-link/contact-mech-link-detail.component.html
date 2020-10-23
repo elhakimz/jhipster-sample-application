@@ -1,0 +1,38 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="contactMechLink">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.contactMechLink.detail.title">Contact Mech Link</span> {{ contactMechLink.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.contactMechLink.toContactMechanism">To Contact Mechanism</span></dt>
+                <dd>
+                    <div *ngIf="contactMechLink.toContactMechanism">
+                        <a [routerLink]="['/contact-mech', contactMechLink.toContactMechanism?.id, 'view']">{{ contactMechLink.toContactMechanism?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.contactMechLink.fromContactMechanism">From Contact Mechanism</span></dt>
+                <dd>
+                    <div *ngIf="contactMechLink.fromContactMechanism">
+                        <a [routerLink]="['/contact-mech', contactMechLink.fromContactMechanism?.id, 'view']">{{ contactMechLink.fromContactMechanism?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/contact-mech-link', contactMechLink.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

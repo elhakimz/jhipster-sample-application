@@ -1,0 +1,25 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "partyContact": {
+      "home": {
+        "title": "Party Contacts",
+        "createLabel": "Create a new Party Contact",
+        "createOrEditLabel": "Create or edit a Party Contact",
+        "notFound": "No Party Contacts found"
+      },
+      "created": "A new Party Contact is created with identifier {{ param }}",
+      "updated": "A Party Contact is updated with identifier {{ param }}",
+      "deleted": "A Party Contact is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Party Contact {{ id }}?"
+      },
+      "detail": {
+        "title": "Party Contact"
+      },
+      "contactType": "Contact Type",
+      "number": "Number",
+      "primary": "Primary",
+      "party": "Party"
+    }
+  }
+}

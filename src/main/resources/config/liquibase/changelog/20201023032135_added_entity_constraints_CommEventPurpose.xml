@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity CommEventPurpose.
+    -->
+    <changeSet id="20201023032135-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="communication_event_id"
+                                 baseTableName="comm_event_purpose"
+                                 constraintName="fk_comm_event_purpose_communication_event_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="comm_event"/>
+
+        <addForeignKeyConstraint baseColumnNames="purpose_type_id"
+                                 baseTableName="comm_event_purpose"
+                                 constraintName="fk_comm_event_purpose_purpose_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="comm_evt_ppos_type"/>
+
+    </changeSet>
+</databaseChangeLog>

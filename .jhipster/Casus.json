@@ -1,0 +1,34 @@
+{
+  "name": "Casus",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "start",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "statusType",
+      "fieldType": "CasusStatusType",
+      "fieldValues": "ACTIVE,NONACTIVE"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20201023033435",
+  "entityTableName": "casus",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

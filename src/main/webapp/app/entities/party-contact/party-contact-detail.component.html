@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="partyContact">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.partyContact.detail.title">Party Contact</span> {{ partyContact.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.partyContact.contactType">Contact Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhipsterSampleApplicationApp.ContactType.' + partyContact.contactType }}">{{ partyContact.contactType }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.partyContact.number">Number</span></dt>
+                <dd>
+                    <span>{{ partyContact.number }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.partyContact.primary">Primary</span></dt>
+                <dd>
+                    <span>{{ partyContact.primary }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.partyContact.party">Party</span></dt>
+                <dd>
+                    <div *ngIf="partyContact.party">
+                        <a [routerLink]="['/party', partyContact.party?.id, 'view']">{{ partyContact.party?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/party-contact', partyContact.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

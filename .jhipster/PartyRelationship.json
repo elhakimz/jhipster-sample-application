@@ -1,0 +1,68 @@
+{
+  "name": "PartyRelationship",
+  "fields": [
+    {
+      "fieldName": "partyRelationshipType",
+      "fieldType": "PartyRelType",
+      "fieldValues": "EMPLOYMENT,PURCHASE,SALES,PARTNERSHIP,CONTACT,CUSTOMER,DISTRCHANNEL",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "fromDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "thruDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "priorityType",
+      "fieldType": "PriorityType",
+      "fieldValues": "HIGH,MEDIUM,LOW"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "partyRole",
+      "otherEntityRelationshipName": "partyRelationship",
+      "relationshipName": "fromPartyRole",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "partyRole",
+      "otherEntityRelationshipName": "partyRelationship",
+      "relationshipName": "toPartyRole",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "statusType",
+      "otherEntityRelationshipName": "partyRelationship",
+      "relationshipName": "statusType",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201023031635",
+  "entityTableName": "party_relationship",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

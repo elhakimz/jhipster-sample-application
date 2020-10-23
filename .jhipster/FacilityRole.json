@@ -1,0 +1,38 @@
+{
+  "name": "FacilityRole",
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "party",
+      "otherEntityRelationshipName": "facilityRole",
+      "relationshipName": "party",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "facilityRoleType",
+      "otherEntityRelationshipName": "facilityRole",
+      "relationshipName": "facilityRoleType",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "facility",
+      "otherEntityRelationshipName": "facilityRole",
+      "relationshipName": "facility",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201023032935",
+  "entityTableName": "facility_role",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
